@@ -1,61 +1,795 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RunQuest – Conquer Your City by Running</title>
+  <meta name="description" content="The Grand Aurum — A world-class luxury hotel offering unparalleled experiences, exquisite dining, and timeless elegance in the heart of the city." />
+  <meta name="keywords" content="luxury hotel, 5 star hotel, boutique hotel, premium stay, resort, spa" />
+  <title>The Grand Aurum | Luxury Hotel & Resort</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>Run. Conquer. Repeat.</h1>
-    <p>Turn your daily runs into a real-world territory game.</p>
-    <button>Get Early Access</button>
-  </section>
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">✦ Grand Aurum ✦</div>
+      <div class="preloader-bar"><span></span></div>
+    </div>
+  </div>
 
-  <!-- HOW IT WORKS -->
-  <section class="how-it-works">
-    <h2>How RunQuest Works</h2>
-    <div class="steps">
-      <div class="step">🏃 Run in your city</div>
-      <div class="step">🗺️ Capture territory</div>
-      <div class="step">🏆 Compete with others</div>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-mark">✦</span>
+        <span class="logo-text">Grand Aurum</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#dining">Dining & Spa</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-sun" id="themeIcon"></i>
+        </button>
+        <a href="#booking" class="btn-book-nav">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#dining">Dining & Spa</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a href="#booking" class="btn-book-mobile">Book Your Stay</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1600&q=80')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">✦ A World-Class Experience ✦</p>
+      <h1 class="hero-title reveal">Where Luxury<br /><em>Meets Legacy</em></h1>
+      <p class="hero-sub reveal">Discover timeless elegance at The Grand Aurum — crafted for those who appreciate the finest things in life.</p>
+      <div class="hero-cta reveal">
+        <a href="#booking" class="btn-primary">Book Your Stay</a>
+        <a href="#about" class="btn-ghost">Explore More</a>
+      </div>
+    </div>
+    <div class="hero-dots">
+      <button class="dot active" data-slide="0"></button>
+      <button class="dot" data-slide="1"></button>
+      <button class="dot" data-slide="2"></button>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- WHY RUNQUEST -->
-  <section class="why">
-    <h2>Why RunQuest?</h2>
-    <p>
-      Running is boring alone. RunQuest turns fitness into a competitive,
-      social, real-world game.
-    </p>
+  <!-- QUICK BOOKING STRIP -->
+  <section id="quick-book">
+    <div class="qb-container">
+      <div class="qb-field">
+        <label><i class="fas fa-map-marker-alt"></i> Destination</label>
+        <select>
+          <option>Mumbai, India</option>
+          <option>Delhi, India</option>
+          <option>Dubai, UAE</option>
+          <option>Paris, France</option>
+        </select>
+      </div>
+      <div class="qb-divider"></div>
+      <div class="qb-field">
+        <label><i class="fas fa-calendar-alt"></i> Check In</label>
+        <input type="date" id="qbCheckin" />
+      </div>
+      <div class="qb-divider"></div>
+      <div class="qb-field">
+        <label><i class="fas fa-calendar-check"></i> Check Out</label>
+        <input type="date" id="qbCheckout" />
+      </div>
+      <div class="qb-divider"></div>
+      <div class="qb-field">
+        <label><i class="fas fa-users"></i> Guests</label>
+        <select>
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4+ Guests</option>
+        </select>
+      </div>
+      <button class="btn-qb">Check Availability</button>
+    </div>
   </section>
 
-<!-- MAP PREVIEW -->
-<section class="map-preview">
-  <h2>Conquer the Map</h2>
-  <p>Your real-world runs turn into territory on the map.</p>
+  <!-- STATS COUNTERS -->
+  <section id="stats">
+    <div class="stats-grid">
+      <div class="stat-item" data-animate>
+        <span class="stat-number" data-target="127">0</span>
+        <span class="stat-suffix">+</span>
+        <p>Luxury Suites</p>
+      </div>
+      <div class="stat-item" data-animate>
+        <span class="stat-number" data-target="25">0</span>
+        <span class="stat-suffix">+</span>
+        <p>Years of Excellence</p>
+      </div>
+      <div class="stat-item" data-animate>
+        <span class="stat-number" data-target="98">0</span>
+        <span class="stat-suffix">%</span>
+        <p>Guest Satisfaction</p>
+      </div>
+      <div class="stat-item" data-animate>
+        <span class="stat-number" data-target="42">0</span>
+        <span class="stat-suffix">+</span>
+        <p>Awards Won</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="map-box">
-    Interactive map preview coming soon
-  </div>
-</section>
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-images">
+        <div class="about-img-main reveal-left" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80')"></div>
+        <div class="about-img-accent reveal-left" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600&q=80')"></div>
+        <div class="about-badge">
+          <span class="badge-star">★★★★★</span>
+          <span>Forbes Travel Guide</span>
+        </div>
+      </div>
+      <div class="about-text reveal-right">
+        <p class="section-eyebrow">✦ Our Story</p>
+        <h2 class="section-title">A Legacy of<br /><em>Exceptional Hospitality</em></h2>
+        <p>Established in 1998, The Grand Aurum has been the benchmark of luxury hospitality in South Asia. Nestled in a heritage building reimagined for the modern traveler, every corner tells a story of timeless elegance and meticulous craftsmanship.</p>
+        <p>From the hand-curated art on our walls to the thread count of our linens, no detail is too small. Our award-winning team of over 400 hospitality professionals exists for one purpose — to make your stay extraordinary.</p>
+        <div class="about-features">
+          <div class="af-item"><i class="fas fa-crown"></i> Forbes 5-Star Certified</div>
+          <div class="af-item"><i class="fas fa-leaf"></i> LEED Platinum Certified</div>
+          <div class="af-item"><i class="fas fa-concierge-bell"></i> 24/7 Butler Service</div>
+          <div class="af-item"><i class="fas fa-shield-alt"></i> Private Security</div>
+        </div>
+        <a href="#rooms" class="btn-primary">Explore Rooms</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- EARLY ACCESS -->
-  <section class="signup">
-    <h2>Get Early Access</h2>
-    <p>Be the first to conquer your city.</p>
-    <input type="email" placeholder="Enter your email" />
-    <button>Notify Me</button>
+  <!-- ROOMS SECTION -->
+  <section id="rooms">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ Accommodations</p>
+      <h2 class="section-title">Our Signature Rooms<br /><em>&amp; Suites</em></h2>
+      <p class="section-sub">Each space designed as a private sanctuary — your home away from home, only far more magnificent.</p>
+    </div>
+    <div class="rooms-grid">
+
+      <div class="room-card reveal">
+        <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80')">
+          <div class="room-badge">Most Popular</div>
+          <div class="room-overlay">
+            <a href="#booking" class="btn-room">Reserve Now</a>
+          </div>
+        </div>
+        <div class="room-info">
+          <div class="room-header">
+            <h3>Deluxe City View</h3>
+            <div class="room-rating"><i class="fas fa-star"></i> 4.9</div>
+          </div>
+          <p>Sweeping city panoramas, king bed, and handcrafted local artwork. Perfect for solo travelers and couples.</p>
+          <div class="room-meta">
+            <span><i class="fas fa-expand-arrows-alt"></i> 42 m²</span>
+            <span><i class="fas fa-user-friends"></i> 2 Guests</span>
+            <span><i class="fas fa-wifi"></i> Free WiFi</span>
+          </div>
+          <div class="room-price">
+            <span class="price">₹18,500</span>
+            <span class="price-per">/ night</span>
+            <a href="#booking" class="btn-book-card">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-card reveal">
+        <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80')">
+          <div class="room-overlay">
+            <a href="#booking" class="btn-room">Reserve Now</a>
+          </div>
+        </div>
+        <div class="room-info">
+          <div class="room-header">
+            <h3>Junior Suite</h3>
+            <div class="room-rating"><i class="fas fa-star"></i> 4.9</div>
+          </div>
+          <p>A spacious retreat with a private sitting area, rainfall shower, and curated mini-bar stocked to your taste.</p>
+          <div class="room-meta">
+            <span><i class="fas fa-expand-arrows-alt"></i> 68 m²</span>
+            <span><i class="fas fa-user-friends"></i> 2 Guests</span>
+            <span><i class="fas fa-bath"></i> Jacuzzi</span>
+          </div>
+          <div class="room-price">
+            <span class="price">₹32,000</span>
+            <span class="price-per">/ night</span>
+            <a href="#booking" class="btn-book-card">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-card reveal featured-room">
+        <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1560200353-ce0a76b1d438?w=800&q=80')">
+          <div class="room-badge gold">Signature Suite</div>
+          <div class="room-overlay">
+            <a href="#booking" class="btn-room">Reserve Now</a>
+          </div>
+        </div>
+        <div class="room-info">
+          <div class="room-header">
+            <h3>Presidential Suite</h3>
+            <div class="room-rating"><i class="fas fa-star"></i> 5.0</div>
+          </div>
+          <p>The pinnacle of luxury — a two-bedroom masterpiece with a private pool, butler, and bespoke interiors.</p>
+          <div class="room-meta">
+            <span><i class="fas fa-expand-arrows-alt"></i> 185 m²</span>
+            <span><i class="fas fa-user-friends"></i> 4 Guests</span>
+            <span><i class="fas fa-swimming-pool"></i> Private Pool</span>
+          </div>
+          <div class="room-price">
+            <span class="price">₹1,25,000</span>
+            <span class="price-per">/ night</span>
+            <a href="#booking" class="btn-book-card">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-card reveal">
+        <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=800&q=80')">
+          <div class="room-overlay">
+            <a href="#booking" class="btn-room">Reserve Now</a>
+          </div>
+        </div>
+        <div class="room-info">
+          <div class="room-header">
+            <h3>Garden Villa</h3>
+            <div class="room-rating"><i class="fas fa-star"></i> 4.8</div>
+          </div>
+          <p>A private villa immersed in lush gardens with a plunge pool, outdoor dining, and complete privacy.</p>
+          <div class="room-meta">
+            <span><i class="fas fa-expand-arrows-alt"></i> 220 m²</span>
+            <span><i class="fas fa-user-friends"></i> 6 Guests</span>
+            <span><i class="fas fa-tree"></i> Private Garden</span>
+          </div>
+          <div class="room-price">
+            <span class="price">₹85,000</span>
+            <span class="price-per">/ night</span>
+            <a href="#booking" class="btn-book-card">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="rooms-cta">
+      <a href="#booking" class="btn-primary">View All Accommodations</a>
+    </div>
+  </section>
+
+  <!-- AMENITIES SECTION -->
+  <section id="amenities">
+    <div class="amenities-bg"></div>
+    <div class="amenities-container">
+      <div class="section-header light">
+        <p class="section-eyebrow">✦ Experiences</p>
+        <h2 class="section-title">World-Class<br /><em>Amenities</em></h2>
+        <p class="section-sub">Every facility designed to exceed expectations and elevate your stay.</p>
+      </div>
+      <div class="amenities-grid">
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-spa"></i></div>
+          <h3>Aurum Spa</h3>
+          <p>An award-winning sanctuary of wellness with over 30 bespoke treatments drawn from ancient Ayurvedic traditions.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-swimming-pool"></i></div>
+          <h3>Infinity Pool</h3>
+          <p>A stunning rooftop infinity pool with panoramic city views, private cabanas, and a dedicated pool butler.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-dumbbell"></i></div>
+          <h3>Fitness Centre</h3>
+          <p>State-of-the-art Technogym equipment, personal trainers, yoga, and Pilates studios open around the clock.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-utensils"></i></div>
+          <h3>5 Restaurants</h3>
+          <p>From Michelin-starred fine dining to casual al fresco brunches — a culinary journey across five distinct restaurants.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-glass-martini-alt"></i></div>
+          <h3>Sky Lounge Bar</h3>
+          <p>Signature cocktails, rare single malts, and live jazz performances 34 floors above the city every evening.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-car"></i></div>
+          <h3>Chauffeur Service</h3>
+          <p>A fleet of Rolls-Royce and Mercedes vehicles with multilingual chauffeurs at your complete disposal.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-child"></i></div>
+          <h3>Kids Club</h3>
+          <p>A world of imagination for young guests — supervised activities, cinema, and art workshops in a safe haven.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-briefcase"></i></div>
+          <h3>Business Centre</h3>
+          <p>Fully equipped meeting rooms, private boardrooms, and dedicated concierge for business travelers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ Visual Journey</p>
+      <h2 class="section-title">A Glimpse of<br /><em>Grand Aurum</em></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item large reveal" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80')">
+        <div class="gallery-overlay"><span>Presidential Suite</span></div>
+      </div>
+      <div class="gallery-item reveal" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80')">
+        <div class="gallery-overlay"><span>Rooftop Pool</span></div>
+      </div>
+      <div class="gallery-item reveal" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80')">
+        <div class="gallery-overlay"><span>Fine Dining</span></div>
+      </div>
+      <div class="gallery-item reveal" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80')">
+        <div class="gallery-overlay"><span>Aurum Spa</span></div>
+      </div>
+      <div class="gallery-item reveal" style="background-image: url('https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80')">
+        <div class="gallery-overlay"><span>Grand Lobby</span></div>
+      </div>
+      <div class="gallery-item tall reveal" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80')">
+        <div class="gallery-overlay"><span>Garden Villa</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section id="testimonials">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ Guest Stories</p>
+      <h2 class="section-title">What Our Guests<br /><em>Say About Us</em></h2>
+    </div>
+    <div class="testimonials-slider">
+      <div class="testimonial-track" id="testimonialTrack">
+
+        <div class="testimonial-card">
+          <div class="t-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"The Grand Aurum redefines luxury. From the moment I stepped into the lobby, I felt like royalty. The Presidential Suite was beyond anything I've ever experienced — absolute perfection."</p>
+          <div class="t-author">
+            <div class="t-avatar" style="background: linear-gradient(135deg,#c9a84c,#8b6914)">SR</div>
+            <div>
+              <strong>Suresh Rajagopal</strong>
+              <span>Managing Director, TechVision India</span>
+              <div class="t-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="t-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"We celebrated our anniversary here and it was truly magical. The spa treatments, the rooftop dinner under the stars, the personalized attention — every single detail was extraordinary."</p>
+          <div class="t-author">
+            <div class="t-avatar" style="background: linear-gradient(135deg,#a08060,#6b4530)">PM</div>
+            <div>
+              <strong>Priya & Mihir Shah</strong>
+              <span>Anniversary Stay</span>
+              <div class="t-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="t-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"I travel 200 days a year for business. The Grand Aurum is the only hotel where I genuinely look forward to my stay. The business suite, the service, and the cuisine are world-class without exception."</p>
+          <div class="t-author">
+            <div class="t-avatar" style="background: linear-gradient(135deg,#c9a84c,#4a3800)">RK</div>
+            <div>
+              <strong>Rahul Krishnamurthy</strong>
+              <span>Global CEO, MediPharm</span>
+              <div class="t-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="t-quote"><i class="fas fa-quote-left"></i></div>
+          <p>"The children's club kept our kids engaged while my husband and I enjoyed the spa. Family luxury travel done right! We'll be back every year without question. Simply the best hotel in Asia."</p>
+          <div class="t-author">
+            <div class="t-avatar" style="background: linear-gradient(135deg,#b8860b,#704214)">AN</div>
+            <div>
+              <strong>Ananya Nair</strong>
+              <span>Family Vacation Guest</span>
+              <div class="t-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="testimonial-nav">
+        <button id="tPrev"><i class="fas fa-chevron-left"></i></button>
+        <button id="tNext"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="testimonial-dots" id="tDots">
+        <span class="t-dot active"></span>
+        <span class="t-dot"></span>
+        <span class="t-dot"></span>
+        <span class="t-dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DINING & SPA SECTION -->
+  <section id="dining">
+    <div class="dining-grid">
+
+      <div class="dining-card reveal-left">
+        <div class="dining-image" style="background-image: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=800&q=80')"></div>
+        <div class="dining-content">
+          <div class="dining-icon"><i class="fas fa-utensils"></i></div>
+          <p class="section-eyebrow">✦ Culinary Arts</p>
+          <h2>Savor &amp; Saffron<br /><em>Restaurant</em></h2>
+          <p>Led by Chef Arjun Mehta, our signature restaurant presents a contemporary Indian tasting menu paired with rare wines from our 12,000-bottle cellar. Ranked #3 in Asia's 50 Best Restaurants.</p>
+          <ul class="dining-highlights">
+            <li><i class="fas fa-check"></i> 7-course tasting menu</li>
+            <li><i class="fas fa-check"></i> Chef's table available</li>
+            <li><i class="fas fa-check"></i> Curated wine pairings</li>
+            <li><i class="fas fa-check"></i> Vegan &amp; Jain options</li>
+          </ul>
+          <a href="#booking" class="btn-primary">Reserve a Table</a>
+        </div>
+      </div>
+
+      <div class="dining-card reveal-right">
+        <div class="dining-image" style="background-image: url('https://images.unsplash.com/photo-1545579133-99bb5ad189be?w=800&q=80')"></div>
+        <div class="dining-content">
+          <div class="dining-icon"><i class="fas fa-spa"></i></div>
+          <p class="section-eyebrow">✦ Wellness</p>
+          <h2>Ananda<br /><em>Spa Retreat</em></h2>
+          <p>A 15,000 sq ft sanctuary of wellness inspired by ancient healing traditions. Our Ayurvedic masters and therapists craft personalised journeys to restore balance, beauty, and inner peace.</p>
+          <ul class="dining-highlights">
+            <li><i class="fas fa-check"></i> 30+ signature treatments</li>
+            <li><i class="fas fa-check"></i> Himalayan salt therapy</li>
+            <li><i class="fas fa-check"></i> Ayurvedic consultation</li>
+            <li><i class="fas fa-check"></i> Couple's retreat packages</li>
+          </ul>
+          <a href="#booking" class="btn-primary">Book a Treatment</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pool Feature -->
+    <div class="pool-feature reveal">
+      <div class="pool-image" style="background-image: url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1400&q=80')">
+        <div class="pool-overlay">
+          <div class="pool-content">
+            <p class="section-eyebrow light">✦ Above The City</p>
+            <h2>The Sky Pool<br /><em>Experience</em></h2>
+            <p>At 120 metres above the city, our infinity pool offers the most breathtaking urban views in India. Open sunrise to midnight with dedicated poolside dining and a curated cocktail menu.</p>
+            <a href="#booking" class="btn-ghost-light">Reserve a Cabana</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING SECTION -->
+  <section id="booking">
+    <div class="booking-container">
+      <div class="booking-text reveal-left">
+        <p class="section-eyebrow">✦ Reservations</p>
+        <h2 class="section-title">Begin Your<br /><em>Grand Experience</em></h2>
+        <p>Our reservations team is on hand 24 hours a day to craft a perfectly personalised itinerary for your stay. Complimentary airport transfers for stays of 2+ nights.</p>
+        <div class="booking-perks">
+          <div class="bp-item"><i class="fas fa-tag"></i> Best Rate Guaranteed</div>
+          <div class="bp-item"><i class="fas fa-times-circle"></i> Free Cancellation</div>
+          <div class="bp-item"><i class="fas fa-gift"></i> Welcome Amenity</div>
+          <div class="bp-item"><i class="fas fa-clock"></i> Early/Late Checkout</div>
+        </div>
+      </div>
+      <form class="booking-form reveal-right" id="bookingForm">
+        <h3>Request a Reservation</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Arjun" required />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Sharma" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="arjun@example.com" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 98765 43210" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Check-In Date</label>
+            <input type="date" required />
+          </div>
+          <div class="form-group">
+            <label>Check-Out Date</label>
+            <input type="date" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Room Type</label>
+            <select required>
+              <option value="">Select Room</option>
+              <option>Deluxe City View</option>
+              <option>Junior Suite</option>
+              <option>Presidential Suite</option>
+              <option>Garden Villa</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Number of Guests</label>
+            <select required>
+              <option>1 Guest</option>
+              <option>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4+ Guests</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Special Requests</label>
+          <textarea placeholder="Anniversary setup, dietary requirements, airport transfer..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary full">Confirm Reservation</button>
+        <p class="form-note"><i class="fas fa-lock"></i> Your information is 100% secure and encrypted.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT + MAP SECTION -->
+  <section id="contact">
+    <div class="contact-container">
+      <div class="contact-info reveal-left">
+        <p class="section-eyebrow">✦ Find Us</p>
+        <h2 class="section-title">Visit<br /><em>Grand Aurum</em></h2>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Address</strong>
+              <p>34, Marine Lines, Nariman Point,<br />Mumbai 400 021, Maharashtra, India</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <strong>Reservations</strong>
+              <p>+91 22 6600 7700</p>
+              <p>+91 98200 55500 (WhatsApp)</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p>reservations@grandaurum.com</p>
+              <p>concierge@grandaurum.com</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Front Desk</strong>
+              <p>Open 24 Hours, 7 Days a Week</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-container reveal-right">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.0316082791!2d72.82279!3d18.924740999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c32291e849%3A0x6fc5b36fde89b9d8!2sNariman%20Point%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1706000000000!5m2!1sen!2sin"
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Grand Aurum Location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq">
+    <div class="faq-container">
+      <div class="section-header">
+        <p class="section-eyebrow">✦ Questions</p>
+        <h2 class="section-title">Frequently Asked<br /><em>Questions</em></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is the check-in and check-out time?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Standard check-in is at 2:00 PM and check-out is at 12:00 PM (noon). Early check-in and late check-out are available based on room availability and may be subject to additional charges. Gold and Platinum members enjoy guaranteed early check-in and late check-out.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is breakfast included in the room rate?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Most room rates include a complimentary breakfast for two at our flagship restaurant. Presidential Suites and Garden Villas include all meals, beverages, and in-room dining at no additional charge. Please check your booking confirmation for specific inclusions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you offer airport transfers?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, we offer complimentary luxury airport transfers for all reservations of 2 nights or more. Our chauffeur-driven Rolls-Royce Phantom or Mercedes S-Class will be waiting for you at the arrivals terminal. Please inform us of your flight details at least 24 hours in advance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is your cancellation policy?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Reservations can be cancelled without charge up to 48 hours before arrival. Cancellations within 48 hours are subject to a one-night charge. Non-refundable rate bookings are not eligible for cancellation. Presidential Suites and Villas have a 7-day cancellation policy.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is the hotel pet-friendly?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We welcome well-behaved pets (under 10 kg) in our Garden Villas. A dedicated pet concierge service is available including gourmet pet meals, grooming, and a custom pet bed and amenity kit. A refundable pet security deposit of ₹5,000 applies. Please inform us prior to arrival.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Are there facilities for business travelers?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Our business centre features 8 private meeting rooms, a 250-seat conference hall, and state-of-the-art AV equipment. Dedicated business concierge, high-speed fibre internet, printing and secretarial services are available 24/7. Corporate accounts are available on request.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <p>Built by a runner, for runners.</p>
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">✦ Grand Aurum ✦</div>
+        <p>The pinnacle of luxury hospitality since 1998. A Forbes Five-Star experience awaits at every turn.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-group">
+        <h4>Hotel</h4>
+        <a href="#about">Our Story</a>
+        <a href="#rooms">Rooms & Suites</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#dining">Dining</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+      <div class="footer-links-group">
+        <h4>Experiences</h4>
+        <a href="#dining">Ananda Spa</a>
+        <a href="#dining">Sky Pool</a>
+        <a href="#dining">Savor & Saffron</a>
+        <a href="#amenities">Fitness Centre</a>
+        <a href="#amenities">Kids Club</a>
+      </div>
+      <div class="footer-links-group">
+        <h4>Support</h4>
+        <a href="#booking">Book a Room</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay Informed</h4>
+        <p>Subscribe for exclusive offers and updates.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" />
+          <button><i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="footer-awards">
+          <span>★ Forbes Five-Star</span>
+          <span>★ Asia's Best 2024</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 The Grand Aurum. All Rights Reserved. | Crafted with precision for extraordinary guests.</p>
+      <p>34, Marine Lines, Nariman Point, Mumbai 400021 | +91 22 6600 7700</p>
+    </div>
   </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/919820055500?text=Hello%2C%20I'd%20like%20to%20enquire%20about%20a%20room%20booking%20at%20The%20Grand%20Aurum."
+     class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp Booking">
+    <i class="fab fa-whatsapp"></i>
+    <span>Book on WhatsApp</span>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- BOOKING SUCCESS MODAL -->
+  <div id="successModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-icon"><i class="fas fa-check-circle"></i></div>
+      <h3>Reservation Requested!</h3>
+      <p>Thank you for choosing The Grand Aurum. Our reservations team will contact you within 2 hours to confirm your stay.</p>
+      <button class="btn-primary" onclick="closeModal()">Close</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
